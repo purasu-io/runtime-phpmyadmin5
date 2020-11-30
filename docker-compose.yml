@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  web:
+    image: eu.gcr.io/rdx-net-public-registry/phpmyadmin:${IMAGE_TAG:-latest}
+    build:
+      context: .
+    ports:
+      - '81:80'
+    environment:
+      PMA_HOST: localhost
+      # PMA_USER: root
+      # PMA_PASSWORD: root-password
+      PMA_ARBITRARY: 1
+      PMA_VERBOSE: "yes"
+      SECRET_COOKIE_BASE: sekrit-cookie-base-please-change-to-something-random
