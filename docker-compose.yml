@@ -14,3 +14,8 @@ services:
       PMA_ARBITRARY: 1
       PMA_VERBOSE: "yes"
       SECRET_COOKIE_BASE: sekrit-cookie-base-please-change-to-something-random
+
+networks:
+  default:
+    external:
+      name: purasu-local
