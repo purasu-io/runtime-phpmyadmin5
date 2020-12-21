@@ -8,13 +8,12 @@ services:
     ports:
       - '81:80'
     environment:
-      PMA_HOST: localhost
+      SECRET_COOKIE_BASE: sekrit-cookie-base-is-injected-by-the-platform
+      PMA_ARBITRARY: 0
+      PMA_HOSTS: "mysql,another-database"
+      # PMA_VERBOSES: local,remote
       # PMA_USER: root
       # PMA_PASSWORD: root-password
-      PMA_ARBITRARY: 1
-      PMA_VERBOSE: "yes"
-      SECRET_COOKIE_BASE: sekrit-cookie-base-please-change-to-something-random
-
 networks:
   default:
     external:
